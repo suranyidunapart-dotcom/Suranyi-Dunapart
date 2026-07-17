@@ -442,3 +442,158 @@ footer{
     padding:25px;
 
 }
+.nagy-kep{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,0.9);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.nagy-kep img{
+
+    max-width:90%;
+
+    max-height:90%;
+
+    border-radius:15px;
+
+}
+
+.bezar{
+
+    position:absolute;
+
+    top:20px;
+
+    right:35px;
+
+    color:white;
+
+    font-size:50px;
+
+    cursor:pointer;
+
+}
+.bal,
+.jobb{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:white;
+
+    font-size:60px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    padding:20px;
+
+}
+
+.bal{
+
+    left:20px;
+
+}
+
+.jobb{
+
+    right:20px;
+
+}
+
+.bal:hover,
+.jobb:hover{
+
+    color:#90ee90;
+
+}
+.gyik-kapcsolat{
+
+    max-width:900px;
+
+    margin:50px auto 0;
+
+    background:#1d6d34;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+}
+
+.gyik-kapcsolat h3{
+
+    margin-top:0;
+
+    font-size:28px;
+
+}
+
+.gyik-kapcsolat p{
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+.gyik-email{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:15px 30px;
+
+    background:white;
+
+    color:#1d6d34;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
+}
+
+.gyik-email:hover{
+
+    background:#ffd54f;
+
+    color:#1d6d34;
+
+}
