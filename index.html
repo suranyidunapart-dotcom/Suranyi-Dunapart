@@ -29,6 +29,7 @@
     <a href="#fooldal">Főoldal</a>
     <a href="#bemutatkozas">Bemutatkozás</a>
     <a href="#galeria">Galéria</a>
+	<a href="#gyik">GYIK</a>
     <a href="#kapcsolat">Kapcsolat</a>
 </nav>
     <header id="fooldal">
@@ -119,6 +120,59 @@
 <p>Legyen szó egy észrevételről, egy fényképről vagy egy Google Maps értékelésről, minden visszajelzés hozzájárul ahhoz, hogy ez a különleges hely még több emberhez eljusson.</p>
 
 </section>
+<section id="gyik" class="gyik">
+
+    <h2>Gyakran ismételt kérdések</h2>
+		<p>A válasz megtekintéséhez kattintson a kérdésre!</p>
+    <details>
+        <summary>🏖️ Ingyenes a belépés?</summary>
+        <p>Igen, a Surányi Duna-part szabadon és ingyenesen látogatható.</p>
+    </details>
+
+    <details>
+        <summary>🌊 Lehet fürdeni?</summary>
+        <p>Igen, azonban a fürdőzés saját felelősségre történik, mivel nem kijelölt strand.</p>
+    </details>
+
+    <details>
+        <summary>🚻 Van mosdó vagy öltöző?</summary>
+        <p>Jelenleg nincs kiépített mosdó és öltöző a területen.</p>
+    </details>
+
+    <details>
+        <summary>🗑️ Van hulladékgyűjtő?</summary>
+        <p>Igen, kérjük mindenki használja a fent kihelyezett hulladékgyűjtőket, és segítsen megőrizni a part tisztaságát.</p>
+    </details>
+
+    <details>
+        <summary>🐕 Lehet kutyát hozni?</summary>
+        <p>Igen, de kérjük a gazdákat, hogy figyeljenek a tisztaságra és más látogatók nyugalmára.</p>
+    </details>
+
+    <details>
+        <summary>🎣 Lehet horgászni?</summary>
+        <p>Igen, a hatályos horgászati szabályok betartásával,a fürdőzőktől távolabb.</p>
+    </details>
+
+    <details>
+        <summary>🚴 Megközelíthető kerékpárral?</summary>
+        <p>Igen, a Duna-part kerékpárral is könnyen megközelíthető.</p>
+    </details>
+<div class="gyik-kapcsolat">
+
+    <h3>❓ Nem találta meg a választ?</h3>
+
+    <p>
+        Ha további kérdése van, vagy segítségre van szüksége,
+        írjon nekünk bizalommal!
+    </p>
+
+    <a href="mailto:suranyidunapart@gmail.com" class="gyik-email">
+        📧 suranyidunapart@gmail.com
+    </a>
+
+</div>
+</section>
 <section id="kapcsolat" class="kapcsolat">
 
     <h2>Kapcsolat</h2>
@@ -172,7 +226,102 @@
 
 </footer>
     </main>
+<div id="nagyKep" class="nagy-kep">
 
+    <span class="bezar" onclick="bezar()">&times;</span>
+
+    <span class="bal" onclick="elozo()">❮</span>
+
+    <img id="kep">
+
+    <span class="jobb" onclick="kovetkezo()">❯</span>
+
+</div>
+
+<script>
+
+let kepek = document.querySelectorAll(".kepek img");
+let aktualis = 0;
+
+function megnyit(kep){
+
+    document.getElementById("nagyKep").style.display="flex";
+
+    document.getElementById("kep").src = kep.src;
+
+    for(let i=0;i<kepek.length;i++){
+
+        if(kepek[i]==kep){
+
+            aktualis=i;
+
+        }
+
+    }
+
+}
+
+function bezar(){
+
+    document.getElementById("nagyKep").style.display="none";
+
+}
+
+function elozo(){
+
+    aktualis--;
+
+    if(aktualis<0){
+
+        aktualis=kepek.length-1;
+
+    }
+
+    document.getElementById("kep").src=kepek[aktualis].src;
+
+}
+
+function kovetkezo(){
+
+    aktualis++;
+
+    if(aktualis>=kepek.length){
+
+        aktualis=0;
+
+    }
+
+    document.getElementById("kep").src=kepek[aktualis].src;
+
+}
+
+document.addEventListener("keydown",function(e){
+
+    if(document.getElementById("nagyKep").style.display=="flex"){
+
+        if(e.key=="ArrowLeft"){
+
+            elozo();
+
+        }
+
+        if(e.key=="ArrowRight"){
+
+            kovetkezo();
+
+        }
+
+        if(e.key=="Escape"){
+
+            bezar();
+
+        }
+
+    }
+
+});
+
+</script>
 </body>
 
 </html>
